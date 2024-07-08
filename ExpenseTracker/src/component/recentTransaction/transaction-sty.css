@@ -1,0 +1,27 @@
+.pagination {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+  list-style-type: none;
+  padding: 0;
+}
+
+.pagination li {
+  margin: 0 5px;
+  cursor: pointer;
+}
+
+.pagination .active {
+  font-weight: bold;
+  text-decoration: underline;
+}
+.active .page-link {
+  background: rgba(67, 150, 123, 1);
+  padding: 10px 13px;
+  border-radius: 10px;
+}
+
+/* Optional: Hide the break element completely if needed */
+/* .break-me {
+  display: none;
+} */
