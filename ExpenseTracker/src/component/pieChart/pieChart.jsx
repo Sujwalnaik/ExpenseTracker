@@ -2,12 +2,6 @@ import { PieChart, Pie, Cell, Legend } from "recharts";
 import { DataContext } from "../contextapi/useContext";
 import { useContext } from "react";
 
-// const data = [
-//   { name: "Food", value: 400 },
-//   { name: "Entertainment", value: 300 },
-//   { name: "Travel", value: 300 },
-// ];
-
 const COLORS = ["#0088FE", "#00C49F", "#FFBB28", "#FF8042"];
 
 const renderCustomizedLabel = ({
@@ -37,21 +31,17 @@ const renderCustomizedLabel = ({
 
 const MyPieChart = () => {
   const data = useContext(DataContext);
+
   return (
-    <PieChart
-      width={300}
-      height={300}
-      // style={{ display: "flex", alignItem: "center", justifyContent: "center" }}
-    >
-      {/* Increase width and height to accommodate larger pie */}
+    <PieChart width={300} height={300}>
       <Pie
         data={data}
         dataKey="value"
-        cx={180} // Center x-coordinate
-        cy={135} // Center y-coordinate
+        cx={150}
+        cy={150}
         labelLine={false}
         label={renderCustomizedLabel}
-        outerRadius={115} // Increase outer radius to make the pie larger
+        outerRadius={100}
         fill="#8884d8"
       >
         {data.map((entry, index) => (
@@ -59,7 +49,7 @@ const MyPieChart = () => {
         ))}
       </Pie>
       <Legend
-        alignItem="center"
+        align="center"
         verticalAlign="bottom"
         layout="horizontal"
         wrapperStyle={{
